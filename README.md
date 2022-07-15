@@ -13,10 +13,14 @@ week 8 epicodus c sharp project. its my first c sharp friday project that utiliz
 ## Setup/Installation Requirements
 
 1 _clone repository from github to your desktop._
+
 2 _open in terminal._
+
 3 _run dotnet restore on both the directory Bakery, and Bakery.Tests_
+
 4 _move to Bakery directory and run "dotnet run"._
-5 _the program should run!
+
+5 _the program should run!_
 
 ## Known Bugs
 
