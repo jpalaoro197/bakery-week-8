@@ -61,11 +61,23 @@ namespace Bakery.Tests
     }
 
     [TestMethod]
-    public void  PastryCost_CostTwoPastryNoDiscount_Int()
+    public void  PastryCost_CostThreePastryDiscount_Int()
     {
       //Arrange
       int pastryQuantity = 3;
       double pastryCost = 5;
+      //Act
+      Pastry bakeryOrder = new Pastry(pastryQuantity);
+      //Assert
+      Assert.AreEqual(pastryCost, bakeryOrder.PastryCost());
+    }
+
+    [TestMethod]
+    public void  PastryCost_CostSixPastryDiscount_Int()
+    {
+      //Arrange
+      int pastryQuantity = 6;
+      double pastryCost = 10;
       //Act
       Pastry bakeryOrder = new Pastry(pastryQuantity);
       //Assert
