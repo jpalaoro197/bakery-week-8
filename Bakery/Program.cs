@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Bakery.Models;
 
 namespace Bakery.Models
@@ -14,7 +15,13 @@ namespace Bakery.Models
       Console.WriteLine("A pastry is $" + Pastry.Price);
       Console.WriteLine("If you buy two pastries then the third is 50% off");
       Console.WriteLine("How many loafs of bread would you like?");
-      int breadResponse = int.parse(Console.ReadLine());
+      int breadResponse = int.Parse(Console.ReadLine());
+      Console.WriteLine("How many pastries would you like?");
+      int pastryResponse = int.Parse(Console.ReadLine());
+      Bread userBread = new Bread(breadResponse);
+      Pastry userPastry = new Pastry(pastryResponse);
+      Console.WriteLine("For " + userBread.Quantity + " loafs of bread and " + userPastry.Quantity + " pastries your total is $" + (userPastry.PastryCost() + userBread.BreadCost())); 
+
     }
   }
 }
