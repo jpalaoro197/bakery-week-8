@@ -31,7 +31,7 @@ namespace Bakery.Tests
       int pastryQuantity = 1;
       double pastryCost = 2;
       //Act
-      Bread bakeryOrder = new Bread(pastryQuantity);
+      Pastry bakeryOrder = new Pastry(pastryQuantity);
       //Assert
       Assert.AreEqual(pastryCost, bakeryOrder.PastryCost());
     }
