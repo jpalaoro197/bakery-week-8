@@ -5,7 +5,7 @@ namespace Bakery.Models
   public class Bread
   {
     private static double _Price = 5;
-    //private double _Discount;
+    private double _Discount;
     public int Quantity { get; set; }
 
     public static double Price
@@ -17,6 +17,7 @@ namespace Bakery.Models
     public Bread(int quantity)
     {
       _Price = Price;
+      _Discount = 0;
       Quantity = quantity;
     }
 
@@ -29,6 +30,10 @@ namespace Bakery.Models
         {
           breadTotal += 0;
         } 
+        else if (index % 3 == 0) 
+        {
+          breadTotal += _Price * _Discount;
+        }
         else
         {
           breadTotal += _Price;
@@ -41,7 +46,7 @@ namespace Bakery.Models
   public class Pastry
   {
     private static double _Price = 2;
-    //private double _Discount;
+    private double _Discount;
     public int Quantity { get; set; }
 
     public static double Price
@@ -53,6 +58,7 @@ namespace Bakery.Models
     public Pastry(int quantity)
     {
       _Price = Price;
+      _Discount = 0.5;
       Quantity = quantity;
     }
 
@@ -65,6 +71,10 @@ namespace Bakery.Models
         {
           pastryTotal += 0;
         } 
+        else if (index % 3 == 0) 
+        {
+          pastryTotal += _Price * _Discount;
+        }
         else
         {
           pastryTotal += _Price;
