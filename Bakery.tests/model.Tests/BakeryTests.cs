@@ -19,6 +19,16 @@ namespace Bakery.Tests
       //Assert
       Assert.AreEqual(breadCost, bakeryOrder.BreadCost());
     }
+    public void  BreadCost_CostOneBreadNoDiscount_Int()
+    {
+      //Arrange
+      int breadQuantity = 2;
+      double breadCost = 10;
+      //Act
+      Bread bakeryOrder = new Bread(breadQuantity);
+      //Assert
+      Assert.AreEqual(breadCost, bakeryOrder.BreadCost());
+    }
   }
 
    [TestClass]
