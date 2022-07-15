@@ -122,18 +122,16 @@ namespace Bakery.Tests
       //Assert
       Assert.AreEqual(waterCost, bakeryOrder.WaterCost());
     }
-
-    
-    // [TestMethod]
-    // public void  PastryCost_CostTwoPastryNoDiscount_Int()
-    // {
-    //   //Arrange
-    //   int pastryQuantity = 2;
-    //   double pastryCost = 4;
-    //   //Act
-    //   Pastry bakeryOrder = new Pastry(pastryQuantity);
-    //   //Assert
-    //   Assert.AreEqual(pastryCost, bakeryOrder.PastryCost());
-    // }
+    [TestMethod]
+    public void  WaterCost_CostTwoWater_Int()
+    {
+      //Arrange
+      int waterQuantity = 2;
+      double waterCost = 8;
+      //Act
+      Water bakeryOrder = new Water(waterQuantity);
+      //Assert
+      Assert.AreEqual(waterCost, bakeryOrder.WaterCost());
+    }
   }
 }
