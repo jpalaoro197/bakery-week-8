@@ -84,7 +84,38 @@ namespace Bakery.Models
     }
   }
 
-  
+  public class Water
+  {
+    private static double _Price = 4;
+    public int Quantity { get; set; }
 
+    public static double Price
+    {
+      get { return _Price; }
+      set { _Price = value; }
+    }
 
+    public Water(int quantity)
+    {
+      _Price = Price;
+      Quantity = quantity;
+    }
+
+    public double WaterCost()
+    {
+      double waterTotal = 0;
+      for (int index = 0; index <= Quantity; index++)
+      {
+        if (index == 0)
+        {
+          waterTotal += 0;
+        } 
+        else
+        {
+          waterTotal += _Price;
+        }
+      }
+      return waterTotal;
+    }
+  }
 }
