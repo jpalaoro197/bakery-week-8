@@ -38,5 +38,43 @@ namespace Bakery.Models
     }
   }
 
+  public class Pastry
+  {
+    private static double _Price = 2;
+    //private double _Discount;
+    public int Quantity { get; set; }
+
+    public static double Price
+    {
+      get { return _Price; }
+      set { _Price = value; }
+    }
+
+    public Pastry(int quantity)
+    {
+      _Price = Price;
+      Quantity = quantity;
+    }
+
+    public double PastryCost()
+    {
+      double pastryTotal = 0;
+      for (int index = 0; index <= Quantity; index++)
+      {
+        if (index == 0)
+        {
+          pastryTotal += 0;
+        } 
+        else
+        {
+          pastryTotal += _Price;
+        }
+      }
+      return pastryTotal;
+    }
+  }
+
+  
+
 
 }
