@@ -19,7 +19,8 @@ namespace Bakery.Tests
       //Assert
       Assert.AreEqual(breadCost, bakeryOrder.BreadCost());
     }
-    public void  BreadCost_CostOneBreadNoDiscount_Int()
+    [TestMethod]
+    public void  BreadCost_CostTwoBreadNoDiscount_Int()
     {
       //Arrange
       int breadQuantity = 2;
