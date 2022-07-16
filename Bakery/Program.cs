@@ -18,6 +18,8 @@ namespace Bakery.Models
       int breadResponse = int.Parse(Console.ReadLine());
       Console.WriteLine("How many pastries would you like?");
       int pastryResponse = int.Parse(Console.ReadLine());
+      Console.WriteLine("would you like to add some water to your order of our super dry products? (y or n");
+      string waterResponse = Console.ReadLine();
       Bread userBread = new Bread(breadResponse);
       Pastry userPastry = new Pastry(pastryResponse);
       Console.WriteLine("For " + userBread.Quantity + " loafs of bread and " + userPastry.Quantity + " pastries your total is $" + (userPastry.PastryCost() + userBread.BreadCost())); 
