@@ -29,11 +29,35 @@ namespace Bakery.Models
         Water userWater = new Water(waterResponse);
         Console.WriteLine("For " + userBread.Quantity + " loafs of bread , " + userPastry.Quantity + " pastries and " + userWater.Quantity + " bottles of water. your total is $" + (userPastry.PastryCost() + userBread.BreadCost() + userWater.WaterCost()));
       }
-      else
+      else if (yesNoResponse == "n")
       {
         Bread userBread = new Bread(breadResponse);
         Pastry userPastry = new Pastry(pastryResponse);
         Console.WriteLine("For " + userBread.Quantity + " loafs of bread and " + userPastry.Quantity + " pastries your total is $" + (userPastry.PastryCost() + userBread.BreadCost()));
+      }
+      else
+      {
+        Console.WriteLine("please answer 'y' or 'n' wether you want water or not.");
+        string secondYesNo = Console.ReadLine();
+        if (secondYesNo == "y")
+        {
+          Console.WriteLine("how many bottles would you like to add to your order");
+        int waterResponse = int.Parse(Console.ReadLine());
+        Bread userBread = new Bread(breadResponse);
+        Pastry userPastry = new Pastry(pastryResponse);
+        Water userWater = new Water(waterResponse);
+        Console.WriteLine("For " + userBread.Quantity + " loafs of bread , " + userPastry.Quantity + " pastries and " + userWater.Quantity + " bottles of water. your total is $" + (userPastry.PastryCost() + userBread.BreadCost() + userWater.WaterCost()));
+        }
+        else if (secondYesNo == "n")
+        {
+          Bread userBread = new Bread(breadResponse);
+          Pastry userPastry = new Pastry(pastryResponse);
+          Console.WriteLine("For " + userBread.Quantity + " loafs of bread and " + userPastry.Quantity + " pastries your total is $" + (userPastry.PastryCost() + userBread.BreadCost()));
+        }
+        else
+        {
+          Console.WriteLine("please come back when you can make a simple decision, theres people waiting in line");
+        }
       }
     }
   }
