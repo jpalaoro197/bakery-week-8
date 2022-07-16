@@ -19,11 +19,22 @@ namespace Bakery.Models
       Console.WriteLine("How many pastries would you like?");
       int pastryResponse = int.Parse(Console.ReadLine());
       Console.WriteLine("would you like to add some water to your order of our super dry products? (y or n");
-      string waterResponse = Console.ReadLine();
-      Bread userBread = new Bread(breadResponse);
-      Pastry userPastry = new Pastry(pastryResponse);
-      Console.WriteLine("For " + userBread.Quantity + " loafs of bread and " + userPastry.Quantity + " pastries your total is $" + (userPastry.PastryCost() + userBread.BreadCost())); 
-
+      string yesNoResponse = Console.ReadLine();
+      if (yesNoResponse == "y")
+      {
+        Console.WriteLine("how many bottles would you like to add to your order");
+        int waterResponse = int.Parse(Console.ReadLine());
+        Bread userBread = new Bread(breadResponse);
+        Pastry userPastry = new Pastry(pastryResponse);
+        Water userWater = new Water(waterResponse);
+        Console.WriteLine("For " + userBread.Quantity + " loafs of bread , " + userPastry.Quantity + " pastries and " + userWater.Quantity + " bottles of water. your total is $" + (userPastry.PastryCost() + userBread.BreadCost() + userWater.WaterCost()));
+      }
+      else
+      {
+        Bread userBread = new Bread(breadResponse);
+        Pastry userPastry = new Pastry(pastryResponse);
+        Console.WriteLine("For " + userBread.Quantity + " loafs of bread and " + userPastry.Quantity + " pastries your total is $" + (userPastry.PastryCost() + userBread.BreadCost()));
+      }
     }
   }
 }
